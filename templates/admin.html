@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block style %}
+   <style>
+        *,
+        html {
+            text-decoration: none;
+            font-family: 'Montserrat', 'Basic', sans-serif;
+        }
+
+        input,
+        select,
+        a,
+        textarea {
+            outline: none;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        header {
+            z-index: 100;
+            height: auto;
+            width: 100%;
+            position: fixed;
+            font-size: 0px;
+            background-color: dimgray;
+            border-bottom: 4px solid orange;
+        }
+
+        body {
+            padding-bottom: 400px;
+            /* Height of the footer */
+            position: relative;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            /* Height of the footer */
+            line-height: 22.5px;
+            padding: 20px 40px;
+            background-color: #FF7F50;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .inline_block {
+            display: inline-block !important;
+        }
+
+        .margin_auto {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .text-align_center {
+            text-align: center !important;
+        }
+
+        .font-0 {
+            font-size: 0px !important;
+        }
+
+        .font-14 {
+            font-size: 14px !important;
+        }
+
+        .font-16 {
+            font-size: 16px !important;
+        }
+
+        .font-18 {
+            font-size: 18px !important;
+        }
+
+        .font-20 {
+            font-size: 20px !important;
+        }
+
+        .font-22 {
+            font-size: 22px !important;
+        }
+
+        .font-26 {
+            font-size: 26px !important;
+        }
+
+        .font-36 {
+            font-size: 36px !important;
+        }
+
+        .font-48 {
+            font-size: 48px !important;
+        }
+
+        .white {
+            color: white !important;
+        }
+
+        .grey {
+            color: grey !important;
+        }
+
+        .darkgrey {
+            color: dimgray !important;
+        }
+
+        .black {
+            color: #000 !important;
+        }
+
+        .transition-03s {
+            transition: all 0.3s ease-out;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .upper_font {
+            font-family: Montserrat !important;
+        }
+
+        .lower_font {
+            font-family: Basic !important;
+        }
+
+        .bold {
+            font-weight: bold !important;
+        }
+
+        .normal {
+            font-weight: normal !important;
+        }
+
+        .header_tab {
+            display: inline-block;
+            width: 16.66%;
+            padding: auto 1%;
+            margin: auto;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            background-color: dimgray;
+            color: yellow;
+            border-right: 0.5px solid grey;
+            border-left: 0.5px solid grey;
+        }
+
+        .header_tab:hover {
+            background-color: grey;
+        }
+
+        .body {
+            padding-top: 65px;
+            /* Height of the header */
+            padding-bottom: 20px;
+            max-width: 80%;
+            height: auto;
+            background-color: #e0e0e0;
+            border-right: 0.5px solid transparent;
+            border-left: 0.5px solid transparent;
+        }
+
+        .english {
+            display: block;
+        }
+
+        .kiswahili {
+            display: none;
+        }
+
+        #news_top_picture {
+            position: relative;
+            left: 0;
+            height: 30em;
+            width: 100%;
+            background-color: #d0d0d0;
+            background-image: url({% static 'Images/elephant.jpg' %});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+
+        textarea {
+            resize: none;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        input {
+            height: 40px;
+            width: 80%;
+            border: 1px solid #c0c0c0;
+            border-radius: 10px;
+            padding: 0.8% 4%;
+            margin: 1% auto;
+            font-weight: bold;
+        }
+
+        .blog_template {
+            margin: 2% auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .news_heading {
+            position: absolute;
+            top: 0;
+            left: 3.6%;
+            height: 40px;
+            width: 45%;
+            box-shadow: 1px 1px 15px 4px #d0d0d0;
+            padding: 10px 15px;
+            margin: 5px auto;
+            background-color: white;
+        }
+
+        .news_body {
+            position: absolute;
+            top: 50px;
+            left: 3.6%;
+            height: 300px;
+            width: 45%;
+            box-shadow: 1px 1px 15px 4px #d0d0d0;
+            margin: 5px auto;
+            padding: 10px 15px;
+            background-color: white;
+        }
+
+        .picture_container {
+            position: relative;
+            text-align: center;
+            color: white;
+            top: 0;
+            right: 2.1%;
+        }
+
+        .input_blog_post_picture {
+            height: 350px;
+            width: 95%;
+            box-shadow: 1px 1px 15px 4px #d0d0d0;
+            margin: 5px auto;
+            padding-top: 10px;
+            border-radius: 8px;
+            background-color: white;
+            background-image: url('Images/giraffe3.jpeg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+        
+        .picture_caption {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+        
+        .input_picture_caption {
+            width: calc( 100% - 27px);
+            border-radius: 8px;
+            position: absolute;
+            background-color: white;
+            bottom: 5px;
+            left: 13px;
+            padding: 10px 15px;
+        }
+        
+        .input_news_body {
+            border-radius: 8px;
+            position: absolute;
+            top: 50px;
+            left: 3.6%;
+            height: 300px;
+            width: 45%;
+            box-shadow: 1px 1px 15px 4px #d0d0d0;
+            margin: 5px auto;
+            padding: 10px 15px;
+            background-color: white;
+        }
+        
+        .blog_post_submit {
+            display: block;
+            margin: auto;
+            text-align: center;
+            color: white;
+            background-color: rgb(139, 44, 9);
+        }
+    </style>
+{% endblock style %}
+{% block body %}
+    <div class="body margin_auto">
+        <div id="news_top_picture" class="picture_container">
+            <div class="picture_caption font-48 bold white text">Blog Post</div>
+        </div>
+        <form method="POST">{% csrf_token %}
+            <div class="blog_template darkgrey bold text font-0">
+                <div style="width:50%;" class="inline_block font-14">
+                   {% render_field form.title class="news_heading" placeholder="Subject" %}
+                    {% render_field form.content class="input_news_body" placeholder="Body" %}
+                </div>
+                <div style="width:50%;" class="picture_container inline_block font-14">
+                    <div class="input_blog_post_picture">
+                        <div>
+                            <label for="blog_image_input">Choose Image or Video:</label>
+                           {% render_field form.image id="blog_image_input" accept="image/jpeg,image/gif,image/png,application/pdf" %}
+                        </div>
+                        {% render_field form.image_caption class="input_picture_caption normal text" placeholder="Image caption" %}
+                    </div>
+                </div>
+            </div>
+            <input class="blog_post_submit" type="submit" value="Post">
+        </form>
+    </div>
+{% endblock body %}

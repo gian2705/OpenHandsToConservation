@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Open Hands to Conservation</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Adam Beleko" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Font Link -->
+    <link href="https://fonts.googleapis.com/css?family=Basic|Montserrat:400,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Styles -->
+    <!-- W3 Stylesheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    {% block style %}{% endblock style %}
+
+    <!-- Scripts -->
+{#    <script src="jquery.min.js"></script>#}
+{#    <script src="jquery.textfill.min.js"></script>#}
+
+
+
+</head>
+<body>
+    <header>
+        <a href="{% url 'openHands:homepage' %}">
+            <div id="home" class="header_tab">Home</div>
+        </a>
+        <a href="{% url 'openHands:news' %}">
+            <div id="news" class="header_tab">News</div>
+        </a>
+        <a href="{%  url 'openHands:projects' %}">
+            <div id="projects" class="header_tab">Projects</div>
+        </a>
+        <a href="{%  url 'openHands:members' %}">
+            <div id="members" class="header_tab">Members</div>
+        </a>
+        <a href="{%  url 'openHands:volunteer' %}">
+            <div id="volunteers" class="header_tab">Volunteers</div>
+        </a>
+        <a href="{%  url 'openHands:about' %}">
+            <div id="about" class="header_tab">About</div>
+        </a>
+    </header>
+
+{% block body %}{% endblock body %}
+
+  <footer class="font-0">
+        <div class="inline-block font-14"></div>
+        <div class="inline-block font-14"></div>
+        <div class="inline-block font-14"></div>
+        <div style="max-width:500px;" class="contacts english inline-block font-14 white">
+            <div style="margin:0 0 10px 0; padding:20px 0 15px 0; border-bottom:2px solid grey;" class="font-26">Acacia Development Society</div>
+            <div class="font-18 bold text">Contact Us:</div>
+            <div class="">Phone: <a href="tel:+255-655-884-820">+255 (655) 884-820</a>, <a href="tel:+255-767-516-805">+255 (767) 516-805</a> </div>
+            <div class="">Email: <a href="mailto:adesodevt@gmail.com?Subject=Enquiries/Maulizo">adesodevt@gmail.com</a> </div>
+            <div class="">Street address: Jasiri Street, Mlandege Area.</div>
+            <div class="">Mailing address: P.O.Box 1519, Iringa. Tanzania.</div>
+            <div class="">Contact name: Percival Lwoga</div>
+            <div class="">Contact title: Chairperson</div>
+        </div>
+        <div style="max-width:500px;" class="contacts kiswahili inline-block font-14 white">
+            <div style="margin:0 0 10px 0; padding:20px 0 15px 0; border-bottom:2px solid grey;" class="font-26">Acacia Development Society</div>
+            <div class="font-18 bold text">Wasiliana Nasi:</div>
+            <div class="">Simu: <a href="tel:+255-655-884-820">+255 (655) 884-820</a>, <a href="tel:+255-767-516-805">+255 (767) 516-805</a> </div>
+            <div class="">Barua pepe: <a href="mailto:adesodevt@gmail.com?Subject=Enquiries/Maulizo">adesodevt@gmail.com</a> </div>
+            <div class="">Anuani ya barabara: Jasiri Street, Mlandege Area.</div>
+            <div class="">Anuani ya barua: S.L.P 1519, Iringa. Tanzania.</div>
+            <div class="">Jina la mwasilianaji: Percival Lwoga</div>
+            <div class="">Cheo cha mwasilianaji: Mwenyekiti</div>
+        </div>
+        <div class="inline-block font-14">
+            <select id="language_selector" class="" name="">
+      <option value="english">English</option>
+      <option value="kiswahili">Kiswahili</option>
+    </select>
+            <script>
+                $(document).ready(function() {
+                    $('#language_selector').change(function() {
+                        if ($(this).val() == 'kiswahili') {
+                            $('.english').css("display", "none");
+                            $('.kiswahili').css("display", "block");
+                        } else {
+
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </footer>
+   <script src="{% static 'js/menu.js' %}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>

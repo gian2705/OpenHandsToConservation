@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block style %}
+    <!-- Styles -->
+     <script>
+        $(document).ready(function() {
+            $("#home").css("background-color", "grey");
+            // NOTE: Clearing/Hiding Bars
+            //$("#home").css("background-color","dimgray");
+            $("#news").css("background-color", "dimgray");
+            $("#projects").css("background-color", "dimgray");
+            $("#members").css("background-color", "dimgray");
+            $("#volunteers").css("background-color", "dimgray");
+            $("#about").css("background-color", "dimgray");
+        });
+    </script>
+
+    <!-- Styles -->
+    <style>
+        *,
+        html {
+            text-decoration: none;
+            font-family: 'Montserrat', 'Basic', sans-serif;
+        }
+
+        input,
+        select,
+        a,
+        textarea {
+            outline: none;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        header {
+            z-index: 100;
+            height: auto;
+            width: 100%;
+            position: fixed;
+            font-size: 0px;
+            background-color: dimgray;
+            border-bottom: 4px solid orange;
+        }
+
+        body {
+            padding-bottom: 400px;
+            /* Height of the footer */
+            position: relative;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            /* Height of the footer */
+            line-height: 22.5px;
+            padding: 20px 40px;
+            background-color: #FF7F50;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .inline_block {
+            display: inline-block !important;
+        }
+
+        .margin_auto {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .text-align_center {
+            text-align: center !important;
+        }
+
+        .font-0 {
+            font-size: 0px !important;
+        }
+
+        .font-14 {
+            font-size: 14px !important;
+        }
+
+        .font-16 {
+            font-size: 16px !important;
+        }
+
+        .font-18 {
+            font-size: 18px !important;
+        }
+
+        .font-20 {
+            font-size: 20px !important;
+        }
+
+        .font-22 {
+            font-size: 22px !important;
+        }
+
+        .font-26 {
+            font-size: 26px !important;
+        }
+
+        .font-36 {
+            font-size: 36px !important;
+        }
+
+        .font-48 {
+            font-size: 48px !important;
+        }
+
+        .white {
+            color: white !important;
+        }
+
+        .grey {
+            color: grey !important;
+        }
+
+        .darkgrey {
+            color: dimgray !important;
+        }
+
+        .black {
+            color: #000 !important;
+        }
+
+        .transition-0.3s {
+            transition: all 0.3s ease-out;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .upper_font {
+            font-family: Montserrat !important;
+        }
+
+        .lower_font {
+            font-family: Basic !important;
+        }
+
+        .bold {
+            font-weight: bold !important;
+        }
+
+        .header_tab {
+            display: inline-block;
+            width: 16.66%;
+            padding: auto 1%;
+            margin: auto;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            background-color: dimgray;
+            color: yellow;
+            border-right: 0.5px solid grey;
+            border-left: 0.5px solid grey;
+        }
+
+        .header_tab:hover {
+            background-color: grey;
+        }
+
+        .body {
+            padding-top: 65px;
+            /* Height of the header */
+            max-width: 80%;
+            height: auto;
+            background-color: #e9e9e9;
+            border-right: 0.5px solid transparent;
+            border-left: 0.5px solid transparent;
+        }
+
+        .english {
+            display: ;
+        }
+
+        .kiswahili {
+            display: none;
+        }
+
+        .top_picture {
+            height: 30em;
+            width: 100%;
+            padding: 2em;
+            text-align: center;
+            background-color: white;
+            background-image: url({% static 'Images/landscape.jpeg' %});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+
+        .top_picture_descriptions {
+            width: 100%;
+            min-height: 330px;
+            height: auto;
+            max-height: 350px;
+            text-align: left;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            padding: 25px;
+            background-color: rgba(76, 76, 76, 0.4);
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .quote_picture {
+            min-height: 20em;
+            height: auto;
+            width: 100%;
+            padding: 2em 5px 20px 5px;
+            text-align: center;
+            background: #FF512F;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #F09819, #FF512F);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #F09819, #FF512F);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .quote_textbox {
+            width: 90%;
+            height: auto;
+            margin: auto;
+            font-size: 22px;
+            padding: 25px;
+            background-color: rgba(76, 76, 76, 0.6);
+            display: ;
+            border-radius: 5px;
+        }
+
+        .enquiry_form {
+            min-height: 350px;
+            height: auto;
+            margin: 1px auto;
+        }
+
+        textarea {
+            resize: none;
+            height: 200px;
+            width: 80%;
+            border: 1px solid #c0c0c0;
+            border-radius: 10px;
+            padding: 0.8% 4%;
+            margin: 1% auto;
+            font-weight: bold;
+        }
+
+        input {
+            height: 40px;
+            width: 80%;
+            border: 1px solid #c0c0c0;
+            border-radius: 10px;
+            padding: 0.8% 4%;
+            margin: 1% auto;
+            font-weight: bold;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 1px solid orange;
+            transition: all 0.3s ease-out;
+        }
+
+        input[type="button"] {
+            background-color: orange;
+            transition: all 0.3s ease-out;
+        }
+
+        input[type="button"]:hover {
+            background-color: rgba(255, 165, 0, 0.7);
+        }
+
+        input[type="button"]:focus {
+            background-color: rgba(32, 178, 170, 0.5);
+            transition: all 0.3s ease-out;
+        }
+    </style>
+{% endblock style %}
+{% block body %}
+    <div class="body margin_auto">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="top_picture">
+            <div class="inline-block">
+                <div class="top_picture_descriptions inline_block text">
+                    Its mission is to see that it acts as a bridge, treasure, pharmacy for economic development through awareness creation on environmental conservation and protection in order to improve sustainable standard of living as well as advocate on community engagement
+                    in social positive behaviour change.<br> This is fulfilled by raising public awareness and understanding of the essential linkage between Environmental conservation and economic development and promote Public, private
+                    partnership idiology to improve participation in promoting spirits of engagement in social and economical change.<br> Join our cause!
+                </div>
+                <input style="width:70%; display:block;" class="bold white pointer text" type="button" value="Volunteer" />
+            </div>
+        </div>
+        <div class="quote_picture">
+            <div style="font-size:26px;" class="english white bold text">Word of the day:</div>
+            <div style="padding:5px; border:5px solid yellow; display:inline-block;">
+                <div style="border:5px solid rgba(66, 66, 210, 0.5); padding:5px; display:inline-block;">
+                    <div class="quote_textbox bold white text">
+                        <div style="" class="text">"Only when your words move with your actions will your words move others into action"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="enquiry_form text-align_center text">
+            <form method="post">{% csrf_token %}
+                <div>
+                    {% render_field form.name placeholder="First Name (Optional)" autocomplete="on" %}
+                </div>
+                <div>
+                    {% render_field form.email placeholder="Email (required)" autocomplete="on" %}
+                </div>
+                <div>
+                    {% render_field form.user_contribution name="comments" maxlength="1000" cols="25" rows="6" placeholder="Questions, enquiries, comments.." %}
+                </div>
+                <div>
+                    <input class="bold white pointer" type="submit" value="Submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock body %}

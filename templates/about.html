@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+ <style>
+        *,
+        html {
+            text-decoration: none;
+            font-family: 'Montserrat', 'Basic', sans-serif;
+        }
+
+        input,
+        select,
+        a,
+        textarea {
+            outline: none;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        header {
+            z-index: 100;
+            height: auto;
+            width: 100%;
+            position: fixed;
+            font-size: 0px;
+            background-color: dimgray;
+            border-bottom: 4px solid orange;
+        }
+
+        body {
+            padding-bottom: 400px;
+            /* Height of the footer */
+            position: relative;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            /* Height of the footer */
+            line-height: 22.5px;
+            padding: 20px 40px;
+            background-color: #FF7F50;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .inline_block {
+            display: inline-block !important;
+        }
+
+        .margin_auto {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .text-align_center {
+            text-align: center !important;
+        }
+
+        .font-0 {
+            font-size: 0px !important;
+        }
+
+        .font-14 {
+            font-size: 14px !important;
+        }
+
+        .font-16 {
+            font-size: 16px !important;
+        }
+
+        .font-18 {
+            font-size: 18px !important;
+        }
+
+        .font-20 {
+            font-size: 20px !important;
+        }
+
+        .font-22 {
+            font-size: 22px !important;
+        }
+
+        .font-26 {
+            font-size: 26px !important;
+        }
+
+        .font-36 {
+            font-size: 36px !important;
+        }
+
+        .font-48 {
+            font-size: 48px !important;
+        }
+
+        .white {
+            color: white !important;
+        }
+
+        .grey {
+            color: grey !important;
+        }
+
+        .darkgrey {
+            color: dimgray !important;
+        }
+
+        .black {
+            color: #000 !important;
+        }
+
+        .transition-0.3s {
+            transition: all 0.3s ease-out;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .upper_font {
+            font-family: Montserrat !important;
+        }
+
+        .lower_font {
+            font-family: Basic !important;
+        }
+
+        .bold {
+            font-weight: bold !important;
+        }
+
+        .header_tab {
+            display: inline-block;
+            width: 16.66%;
+            padding: auto 1%;
+            margin: auto;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            background-color: dimgray;
+            color: yellow;
+            border-right: 0.5px solid grey;
+            border-left: 0.5px solid grey;
+        }
+
+        .header_tab:hover {
+            background-color: grey;
+        }
+
+        .body {
+            padding-top: 65px;
+            /* Height of the header */
+            padding-bottom: 10px;
+            max-width: 80%;
+            height: auto;
+            background-color: #e0e0e0;
+            border-right: 0.5px solid transparent;
+            border-left: 0.5px solid transparent;
+        }
+
+        .english {
+            display: ;
+        }
+
+        .kiswahili {
+            display: none;
+        }
+
+        #about_top_picture {
+            height: 30em;
+            width: 100%;
+            background-color: ;
+            background-image: url({% static 'Images/giraffe2.jpeg' %});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+
+        .picture_container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .picture_caption {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        textarea {
+            resize: none;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        input {
+            height: 40px;
+            width: 80%;
+            border: 1px solid #c0c0c0;
+            border-radius: 10px;
+            padding: 0.8% 4%;
+            margin: 1% auto;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding-left: 1em;
+            text-indent: -.7em;
+        }
+
+        li::before {
+            content: "• ";
+            line-height: 14px;
+            font-size: 30px;
+            color: orange;
+        }
+
+        .company-profile_content {
+            padding: 20px;
+            line-height: 22.5px;
+        }
+    </style>
+{% endblock style %}
+{% block body %}
+    <div class="body margin_auto">
+        <div id="about_top_picture" class="picture_container">
+            <div class="picture_caption font-48 bold white text">About Us</div>
+        </div>
+        <div class="company-profile_content">
+            <div class="heading bold text">Brief history:</div>
+            <div class="">
+                The Organization was established in 1988 as community based organization up to 2007 when it was registered as a Non-Governmental Organization.<br> ADESO played a very big role in Environmental conservation especially in bee Management,
+                bee products and bee by products. Namely honey beeswax, Royal jelly, bee propolis, bee venom, bee pollen, Apilarnil and pollination services.<br>
+            </div>
+            <div class="heading bold text">Achievements so far:</div>
+            <div>
+                <ul>
+                    <li>We have organized groups in production of honey from 0 in 5 years a go to 1800kgs strained honey while others produce up to 9 tones per season.</li>
+                    <li>Mentored, coached 5 to 12 groups of environmentalists on bee management and environmental conservation to each district of iringa region.</li>
+                    <li>We are closely working with districts Local Government Councils in Environmental management especially in Bee keeping, Climate change, Forest economics. Rural electrification, eco-tourism Promotion, Water and Sanitation.</li>
+                </ul>
+            </div>
+            <div class="heading bold text">Team:</div>
+            <div class="">
+                ADESO being a membership Organization is led by the Chairperson. under him there is a Board of Directors who have been selected from the General assembly depending on membership and their professionals. Board members are responsible for the employement
+                of the Program Manager and other senior staff.
+            </div>
+        </div>
+    </div>
+{% endblock body %}
