@@ -9,7 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=128)
     content = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
-    uploaded_media = models.FileField(verbose_name='Image or Video', default="mediafiles/Ubuntu.jpg")
+    uploaded_media = models.ImageField(verbose_name='Image or Video', upload_to='Post-images', default="mediafiles/Ubuntu.jpg")
     image_caption = models.TextField(verbose_name="Image or Video caption")
 
     def __str__(self):
